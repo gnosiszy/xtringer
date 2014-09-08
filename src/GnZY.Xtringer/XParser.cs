@@ -9,12 +9,16 @@ namespace GnZY.Xtringer
     public class XParser : DynamicObject
     {
         protected const string Expression = @"\{(?<name>[^\}\:]+)\:?(?<format>[^\}]+)?[\}]+";
+        protected const RegexOptions ExpressionOptions = RegexOptions.Singleline | RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant;
 
-        protected static readonly RegexOptions RegexOptions = RegexOptions.Singleline | RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant;
-
-        protected IDictionary<string, Func<object>> Values = new Dictionary<string, Func<object>>();
-
+        protected readonly IDictionary<string, Func<object>> Values = new Dictionary<string, Func<object>>();
         public readonly IFormatProvider DefaultFormatter = new DefaultFormatProvider();
+
+        public XParser()
+        {
+            this["\\{"] = "{";
+            this["\\"] = "}";
+        }
 
         public string this[string name]
         {
@@ -73,13 +77,13 @@ namespace GnZY.Xtringer
                 var format = item.Groups["format"].Value;
                 var value = GetValue(name, format, formatter);
 
-                if (Regex.IsMatch(value, Expression, RegexOptions))
+                if (Regex.IsMatch(value, Expression, ExpressionOptions))
                 {
                     value = Parse(value, formatter);
                 }
 
                 return value;
-            }, RegexOptions);
+            }, ExpressionOptions);
         }
     }
 }
