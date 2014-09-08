@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnZY.Xtringer", "GnZY.Xtringer\GnZY.Xtringer.csproj", "{B1044A67-7B8B-4489-BD5E-41AB6CB5B2EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnZY.Xtringer.Tests", "GnZY.Xtringer.Tests\GnZY.Xtringer.Tests.csproj", "{5B94588C-7241-4F8F-BE81-2A5DCF9EA650}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{B1044A67-7B8B-4489-BD5E-41AB6CB5B2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1044A67-7B8B-4489-BD5E-41AB6CB5B2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1044A67-7B8B-4489-BD5E-41AB6CB5B2EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B94588C-7241-4F8F-BE81-2A5DCF9EA650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B94588C-7241-4F8F-BE81-2A5DCF9EA650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B94588C-7241-4F8F-BE81-2A5DCF9EA650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B94588C-7241-4F8F-BE81-2A5DCF9EA650}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
